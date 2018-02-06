@@ -1,27 +1,58 @@
-# NgMatEditBar
+# NgMatIconBar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+The component creates an icon-bar which expands a list of Material icons on click. See the demo for the effect:
+![NgMatSearchBar demo](https://raw.githubusercontent.com/tommueller/ng-mat-icon-bar/master/docs/demo.gif)
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install the dependency via npm:
 
-## Code scaffolding
+```bash
+npm install ng-mat-icon-bar --save
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+or yarn
 
-## Build
+```bash
+yarn add ng-mat-icon-bar
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+and import the module into your apps _app.module.ts_ like this:
 
-## Running unit tests
+```typescript
+import { NgMatIconBarModule } from 'ng-mat-icon-bar';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+...
 
-## Running end-to-end tests
+@NgModule({
+  ...,
+  imports: [
+    ...,
+    NgMatIconBarModule
+  ],
+  ...
+})
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+and you also need to add Material Icons webfont by adding
 
-## Further help
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+to your _index.html_.
+
+## Usage
+
+You can use the component with its selector:
+
+```angular
+<mat-icon-bar>
+    // add your icons in here like this:
+    <mat-icon (click)="doSomething()">icon</mat-icon>
+</mat-icon-bar>
+```
+
+## Contributions
+
+Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.
