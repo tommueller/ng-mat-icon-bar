@@ -1,0 +1,8 @@
+<span class="mat-icon-bar_icon" [class.mat-icon-bar_icon--active]="barVisible">
+  <mat-icon class="mat-icon-bar_icon--close" (click)="barVisible = false">close</mat-icon>
+  <mat-icon class="mat-icon-bar_icon--edit" (click)="barVisible = true">settings</mat-icon>
+</span>
+
+<span class="mat-icon-bar_items" [@slideInOut]="barVisible">
+  <ng-content></ng-content>
+</span>

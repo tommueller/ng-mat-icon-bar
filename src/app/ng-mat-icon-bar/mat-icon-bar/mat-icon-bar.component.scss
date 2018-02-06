@@ -1,0 +1,51 @@
+:host {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.mat-icon-bar_items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    overflow: hidden;
+}
+
+.mat-icon-bar_icon {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:hover {
+        cursor: pointer;
+    }
+    .mat-icon-bar_icon--close,
+    .mat-icon-bar_icon--edit {
+        transition: all .2s cubic-bezier(.4, 0, .2, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: #FFF;
+    }
+    .mat-icon-bar_icon--close,
+    &.mat-icon-bar_icon--active .mat-icon-bar_icon--edit {
+        opacity: 0;
+        transform: rotate(225deg);
+    }
+    &.mat-icon-bar_icon--active .mat-icon-bar_icon--close {
+        opacity: 1;
+        z-index: 3;
+        visibility: visible;
+        transform: rotate(360deg);
+    }
+}
