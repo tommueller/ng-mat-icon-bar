@@ -19,7 +19,7 @@
     background: #FFF;
 }
 
-.mat-icon-bar_icon {
+.mat-icon-bar_icons {
     display: block;
     margin: 0;
     padding: 0;
@@ -29,21 +29,22 @@
     &:hover {
         cursor: pointer;
     }
-    .mat-icon-bar_icon--close,
-    .mat-icon-bar_icon--edit {
+    .mat-icon-bar_icon-close,
+    .mat-icon-bar_icon-edit {
         transition: all .2s cubic-bezier(.4, 0, .2, 1);
         position: absolute;
         top: 0;
         left: 0;
         z-index: 2;
         background: #FFF;
+        border-radius: 50%;
     }
-    .mat-icon-bar_icon--close,
-    &.mat-icon-bar_icon--active .mat-icon-bar_icon--edit {
+    .mat-icon-bar_icon-close,
+    &.mat-icon-bar_icon--active .mat-icon-bar_icon-edit {
         opacity: 0;
         transform: rotate(225deg);
     }
-    &.mat-icon-bar_icon--active .mat-icon-bar_icon--close {
+    &.mat-icon-bar_icon--active .mat-icon-bar_icon-close {
         opacity: 1;
         z-index: 3;
         visibility: visible;

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatIconModule, MatInputModule } from '@angular/material';
+import { MatIconModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconBarComponent } from './mat-icon-bar/mat-icon-bar.component';
@@ -10,7 +10,8 @@ import { MatIconBarComponent } from './mat-icon-bar/mat-icon-bar.component';
     BrowserAnimationsModule,
     CommonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatRippleModule
   ],
   exports: [
     MatIconBarComponent
