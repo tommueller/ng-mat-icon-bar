@@ -55,9 +55,9 @@
 .mat-icon-bar_items /deep/ mat-icon {
     border-radius: 50%;
     &:not(:first-child) {
-        padding-left: 16px;
+        margin-left: 16px;
     }
     &:last-child {
-        padding-right: 16px;
+        margin-right: 16px;
     }
 }
