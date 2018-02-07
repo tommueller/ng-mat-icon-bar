@@ -51,3 +51,13 @@
         transform: rotate(360deg);
     }
 }
+
+.mat-icon-bar_items /deep/ mat-icon {
+    border-radius: 50%;
+    &:not(:first-child) {
+        padding-left: 16px;
+    }
+    &:last-child {
+        padding-right: 16px;
+    }
+}
