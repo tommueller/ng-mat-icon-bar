@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mat-icon-bar',
@@ -17,6 +17,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatIconBarComponent implements OnInit {
 
+  @Input() mainIcon = 'settings';
   barVisible: false;
 
   constructor() { }
