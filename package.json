@@ -1,6 +1,6 @@
 {
   "name": "ng-mat-icon-bar",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"
