@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger, query, stagger , keyframes} from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +7,22 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./mat-icon-bar.component.scss'],
   animations: [
     trigger('slideInOut', [
-      state('*', style({ width: '0' })),
-      state('false', style({ width: '0' })),
-      state('true', style({ width: '*' })),
-      transition('true => *', animate('300ms ease-in')),
-      transition('* => true', animate('300ms ease-out'))
+      state('*', style({ width: 0, opacity: 0 })),
+      state('false', style({ width: 0, opacity: 0 })),
+      state('true', style({ width: '*', opacity: 1 })),
+      transition('true => *', [
+        animate('200ms ease-in', keyframes([
+          style({opacity: 1, width: '*', offset: 0}),
+          style({opacity: 0, width: '*', offset: 1}),
+        ])),
+      ]),
+      transition('* => true', [
+        animate('0ms ease-out'),
+        query('.mat-icon', style({ opacity: 0, transform: 'translateX(40px)' })),
+        query('.mat-icon', stagger('-50ms', [
+          animate('300ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+        ])),
+      ])
     ])
   ]
 })
