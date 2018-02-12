@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger, query, stagger , keyframes} from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'mat-icon-bar',
@@ -29,11 +29,24 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MatIconBarComponent implements OnInit {
 
   @Input() mainIcon = 'settings';
-  barVisible: false;
+  @Output() onOpen = new EventEmitter<void>();
+  @Output() onClose = new EventEmitter<void>();
+
+  barVisible: boolean;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public open(): void {
+    this.barVisible = true;
+    this.onOpen.emit();
+  }
+
+  public close(): void {
+    this.barVisible = false;
+    this.onClose.emit();
   }
 
 }
