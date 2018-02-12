@@ -58,6 +58,8 @@ The component has two event outputs:
 - *onOpen*: triggered when bar is shown
 - *onClose*: triggered when bar is closed
 
+Optionally you can force the component to show a confirmation dialog before closing. This is done by setting `[confirmClose]="true"`. You can then provide a `Translation` object to use custom text in the confirm-dialog be setting `[translation]`-property.
+
 ## Contributions
 
 Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.

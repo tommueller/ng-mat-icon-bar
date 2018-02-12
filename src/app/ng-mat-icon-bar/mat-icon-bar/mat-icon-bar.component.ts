@@ -1,5 +1,9 @@
-import { animate, state, style, transition, trigger, query, stagger , keyframes} from '@angular/animations';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { animate, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { Translation } from '../translation-model/translation.model';
 
 @Component({
   selector: 'mat-icon-bar',
@@ -12,8 +16,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
       state('true', style({ width: '*', opacity: 1 })),
       transition('true => *', [
         animate('200ms ease-in', keyframes([
-          style({opacity: 1, width: '*', offset: 0}),
-          style({opacity: 0, width: '*', offset: 1}),
+          style({ opacity: 1, width: '*', offset: 0 }),
+          style({ opacity: 0, width: '*', offset: 1 }),
         ])),
       ]),
       transition('* => true', [
@@ -29,12 +33,21 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class MatIconBarComponent implements OnInit {
 
   @Input() mainIcon = 'settings';
+  @Input() closeIcon = 'close';
+  @Input() confirmClose = false;
+  @Input() translation: Translation = {
+    title: 'Confirm closing',
+    body: 'Are you sure you want to close the menu?',
+    confirm: 'OK',
+    cancel: 'Cancel'
+  };
+
   @Output() onOpen = new EventEmitter<void>();
   @Output() onClose = new EventEmitter<void>();
 
   barVisible: boolean;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -45,8 +58,22 @@ export class MatIconBarComponent implements OnInit {
   }
 
   public close(): void {
-    this.barVisible = false;
-    this.onClose.emit();
+    if (!this.confirmClose) {
+      this.barVisible = false;
+      this.onClose.emit();
+      return;
+    }
+
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: { translations: this.translation }
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if (result) {
+        this.barVisible = false;
+        this.onClose.emit();
+      }
+    });
   }
 
 }
