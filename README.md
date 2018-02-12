@@ -53,6 +53,11 @@ You can use the component with its selector:
 </mat-icon-bar>
 ```
 
+The component has two event outputs:
+
+- *onOpen*: triggered when bar is shown
+- *onClose*: triggered when bar is closed
+
 ## Contributions
 
 Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.
