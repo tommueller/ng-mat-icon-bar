@@ -1,63 +1,63 @@
 :host {
-    position: relative;
-    display: block;
-    width: 24px;
-    height: 24px;
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .mat-icon-bar_items {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    right: 24px;
-    overflow: hidden;
-    background: #FFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 24px;
+  overflow: hidden;
+  background: #fff;
 }
 
 .mat-icon-bar_icons {
-    display: block;
-    margin: 0;
-    padding: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &:hover {
+    cursor: pointer;
+  }
+  .mat-icon-bar_icon-close,
+  .mat-icon-bar_icon-edit {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     top: 0;
     left: 0;
-    &:hover {
-        cursor: pointer;
-    }
-    .mat-icon-bar_icon-close,
-    .mat-icon-bar_icon-edit {
-        transition: all .2s cubic-bezier(.4, 0, .2, 1);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background: #FFF;
-        border-radius: 50%;
-    }
-    .mat-icon-bar_icon-close,
-    &.mat-icon-bar_icon--active .mat-icon-bar_icon-edit {
-        opacity: 0;
-        transform: rotate(225deg);
-    }
-    &.mat-icon-bar_icon--active .mat-icon-bar_icon-close {
-        opacity: 1;
-        z-index: 3;
-        visibility: visible;
-        transform: rotate(360deg);
-    }
+    z-index: 2;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .mat-icon-bar_icon-close,
+  &.mat-icon-bar_icon--active .mat-icon-bar_icon-edit {
+    opacity: 0;
+    transform: rotate(225deg);
+  }
+  &.mat-icon-bar_icon--active .mat-icon-bar_icon-close {
+    opacity: 1;
+    z-index: 3;
+    visibility: visible;
+    transform: rotate(360deg);
+  }
 }
 
-.mat-icon-bar_items /deep/ mat-icon {
-    border-radius: 50%;
-    &:not(:first-child) {
-        margin-left: 16px;
-    }
-    &:last-child {
-        margin-right: 16px;
-    }
+.mat-icon-bar_items ::ng-deep mat-icon {
+  border-radius: 50%;
+  &:not(:first-child) {
+    margin-left: 16px;
+  }
+  &:last-child {
+    margin-right: 16px;
+  }
 }
