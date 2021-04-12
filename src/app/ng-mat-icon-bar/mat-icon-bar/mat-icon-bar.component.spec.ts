@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MatIconBarComponent } from './mat-icon-bar.component';
 
@@ -6,7 +6,7 @@ describe('MatEditBarComponent', () => {
   let component: MatIconBarComponent;
   let fixture: ComponentFixture<MatIconBarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MatIconBarComponent ]
     })
