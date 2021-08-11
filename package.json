@@ -1,6 +1,6 @@
 {
   "name": "ng-mat-icon-bar",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "license": "MIT",
   "scripts": {
     "build": "ng build",
@@ -49,7 +49,9 @@
     "typescript": "~4.3.5",
     "zone.js": "~0.11.4"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/material": "^12.0.0"
+  },
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"
