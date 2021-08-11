@@ -1,6 +1,6 @@
 {
   "name": "ng-mat-icon-bar",
-  "version": "12.0.1",
+  "version": "12.0.2",
   "license": "MIT",
   "scripts": {
     "build": "ng build",
